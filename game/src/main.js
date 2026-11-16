@@ -247,6 +247,8 @@ function step(dt) {
   if (state.phase === 'combat' || state.phase === 'buy') {
     player.step(dt, keys);
     weapons.step(dt);
+  }
+  if (state.phase === 'combat') {
     botCtx.hitMeshes = bots.hitMeshes();
     bots.step(dt, botCtx);
     combat.step(dt, state);
